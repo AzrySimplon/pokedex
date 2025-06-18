@@ -1,0 +1,15 @@
+<h1>Pokedex</h1>
+
+<!-- Using Angular's @for directive to iterate over the pokes$ Observable -->
+@for (poke of pokes$ | async; track $index; let i = $index) {
+  <!-- Display each Pokemon item here -->
+  <a [routerLink]="['/poke', getPokeIndex(poke)]">
+    <p>{{poke.name}}</p>
+    <p>Pokemon #{{i + 1}}</p>
+  </a>
+} @empty {
+  <!-- This block will be displayed when the list is empty or while loading -->
+  <div class="empty-state">
+    <p>No Pokemon found. The list is empty or still loading...</p>
+  </div>
+}
