@@ -1,11 +1,18 @@
-<h1>Pokedex</h1>
+<div class="filter-section">
+  <label for="type-select">Filter by Type:</label>
+  <select id="type-select" [(ngModel)]="selectedType" (change)="onTypeChange()">
+    <option value="">All Types</option>
+    @for (type of types$ | async; track $index) {
+      <option [value]="type">{{type}}</option>
+    }
+  </select>
+</div>
 
 <!-- Using Angular's @for directive to iterate over the pokes$ Observable -->
-@for (poke of pokes$ | async; track $index; let i = $index) {
+@for (poke of displayedPokes$ | async; track $index) {
   <!-- Display each Pokemon item here -->
-  <a [routerLink]="['/poke', getPokeIndex(poke)]">
+  <a [routerLink]="['/poke', poke.id]">
     <p>{{poke.name}}</p>
-    <p>Pokemon #{{i + 1}}</p>
   </a>
 } @empty {
   <!-- This block will be displayed when the list is empty or while loading -->
