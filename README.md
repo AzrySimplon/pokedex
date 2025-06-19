@@ -25,7 +25,13 @@
 
 ## 📌 Présentation
 
-Cette application consomme la [PokeAPI](https://pokeapi.co/) pour afficher une liste paginée de Pokémon, avec recherche et filtres. Le projet est mené en paire pour assurer revue de code continue et montée en compétences.
+**Pokedex-Angular** est une application web riche et réactive développée avec Angular 19 et TypeScript.  
+Conçue dans un esprit **Pair Programming**, chaque fonctionnalité est co-développée et relue en temps réel pour garantir :
+- ✔️ Une qualité de code optimale  
+- 🚀 Une montée en compétence accélérée  
+- 🤝 Une collaboration fluide  
+
+Cette application consomme la [PokeAPI](https://pokeapi.co/).
 
 ---
 
