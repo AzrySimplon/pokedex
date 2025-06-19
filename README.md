@@ -75,12 +75,6 @@ npm install  # ou yarn install
 
 ---
 
-## 📌 Contribuer
-
-Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour le guide de contribution et les templates d’issues.
-
----
-
 ## 🚀 Roadmap
 
 Voir [ROADMAP.md](ROADMAP.md) pour les prochaines évolutions :
@@ -111,17 +105,6 @@ Toutes les 30 minutes (à adapter selon l’équipe).
 
 ## 📌 Auteur
 
-👨‍💻 **Azriel** – Étudiant développeur Fullstack Java / Angular  
-🎓 Projet réalisé en duo dans le cadre de la formation Simplon, promotion 2025  
-🔧 Rôle principal et responsabilités :  
-- Conception et mise en place de l’architecture Angular (AppModule, modules, routing)  
-- Développement des services techniques (`PokeApiService`) et intégration de la PokeAPI  
-- Création et implémentation des composants principaux (`SearchComponent`, `ListComponent`, `DetailComponent`)   
-📅 Période du projet : Juin 2025  
-🌐 Contact & suivi : [GitHub AzrySimplon](https://github.com/AzrySimplon)
-
----
-
 👨‍💻 **Quentin** – Étudiant développeur Fullstack Java / Angular  
 🎓 Projet réalisé en duo dans le cadre de la formation Simplon, promotion 2025  
 🔧 Rôle principal et responsabilités :  
@@ -130,6 +113,11 @@ Toutes les 30 minutes (à adapter selon l’équipe).
 - Rédaction de la documentation complète (README, guides d’installation et usage)  
 📅 Période du projet : Juin 2025  
 🌐 Contact & suivi : [GitHub Quentin384](https://github.com/Quentin384)
+
+🔧 Rôle secondaire et responsabilités :  
+- Conception et mise en place de l’architecture Angular (AppModule, modules, routing)  
+- Développement des services techniques (`PokeApiService`) et intégration de la PokeAPI  
+- Création et implémentation des composants principaux (`SearchComponent`, `ListComponent`, `DetailComponent`) 
 
 ---
 

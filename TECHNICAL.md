@@ -7,13 +7,11 @@
 ```mermaid
 flowchart LR
   AppModule --> AppRoutingModule
-  AppRoutingModule --> SearchComponent
   AppRoutingModule --> ListComponent
   AppRoutingModule --> DetailComponent
-  SearchComponent --> PokeApiService
   ListComponent --> PokeApiService
   DetailComponent --> PokeApiService
-  PokeApiService --> PokeAPI[(https://pokeapi.co/api/v2)]
+  PokeApiService --> PokeAPI
 ```
 
 ### Chargement d’une page
@@ -29,11 +27,6 @@ sequenceDiagram
   Service-->>List: [Pokemon[]]
   Note right of List: Tri alphabétique
 ```
-
-1. `ngOnInit()` de `ListComponent` appelle `loadPage(0)`.
-2. `getPokemonList(offset, limit)` construit l’URL et envoie la requête GET.
-3. La réponse `{ results: Pokémon[] }` est transformée en `Observable<Pokemon[]>`.
-4. `ListComponent` trie et affiche.
 
 ### Recherche dynamique
 
@@ -71,36 +64,3 @@ sequenceDiagram
 - `ActivatedRoute` pour récupérer l’`id`.
 - `getPokemonById(id)` renvoie un `Observable<PokemonDetail>` pour le template.
 
-## Extraits de code
-
-**AppModule**
-```ts
-@NgModule({
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    AppRoutingModule
-  ],
-  bootstrap: [AppComponent]
-})
-export class AppModule {}
-```
-
-**PokeApiService**
-```ts
-@Injectable({ providedIn: 'root' })
-export class PokeApiService {
-  constructor(private http: HttpClient) {}
-
-  getPokemonList(offset: number, limit: number): Observable<Pokemon[]> {
-    return this.http
-      .get<{ results: Pokemon[] }>(`${environment.pokeApiBaseUrl}/pokemon?offset=${offset}&limit=${limit}`)
-      .pipe(map(res => res.results));
-  }
-
-  getPokemonById(id: number): Observable<PokemonDetail> {
-    return this.http.get<PokemonDetail>(`${environment.pokeApiBaseUrl}/pokemon/${id}`);
-  }
-}
-```
