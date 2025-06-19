@@ -1,6 +1,5 @@
 # 🚀 POKEDEX-ANGULAR
 
-**Pokedex-Angular** est une application web réactive développée en Angular 19 et TypeScript, conçue en **Pair Programming** pour garantir une qualité de code optimale et un apprentissage mutuel.
 
 ![Pikachu surprise](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjVmYW5ncTVnaW5lZ3I1c2dvd3E3aXBwY3h2N2VyZHk5dWptYnc4eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10LKovKon8DENq/giphy.gif)
 
