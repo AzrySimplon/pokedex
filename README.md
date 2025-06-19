@@ -1,5 +1,14 @@
 # 🚀 POKEDEX-ANGULAR
 
+## 📌 Présentation
+
+**Pokedex-Angular** est une application web riche et réactive développée avec Angular 19 et TypeScript.  
+Conçue dans un esprit **Pair Programming**, chaque fonctionnalité est co-développée et relue en temps réel pour garantir :
+- ✔️ Une qualité de code optimale  
+- 🚀 Une montée en compétence accélérée  
+- 🤝 Une collaboration fluide  
+
+Cette application consomme la [PokeAPI](https://pokeapi.co/).
 
 ![Pikachu surprise](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjVmYW5ncTVnaW5lZ3I1c2dvd3E3aXBwY3h2N2VyZHk5dWptYnc4eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10LKovKon8DENq/giphy.gif)
 
@@ -19,18 +28,6 @@
 - [FAQ](#-faq)
 - [Auteurs](#-auteurs)
 - [Licence](#-licence)
-
----
-
-## 📌 Présentation
-
-**Pokedex-Angular** est une application web riche et réactive développée avec Angular 19 et TypeScript.  
-Conçue dans un esprit **Pair Programming**, chaque fonctionnalité est co-développée et relue en temps réel pour garantir :
-- ✔️ Une qualité de code optimale  
-- 🚀 Une montée en compétence accélérée  
-- 🤝 Une collaboration fluide  
-
-Cette application consomme la [PokeAPI](https://pokeapi.co/).
 
 ---
 
