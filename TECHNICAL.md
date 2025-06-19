@@ -43,6 +43,4 @@ sequenceDiagram
   Note right of Detail: Liaison template
 ```
 
-- `ActivatedRoute` pour récupérer l’`id`.
-- `getPokemonById(id)` renvoie un `Observable<PokemonDetail>` pour le template.
 
