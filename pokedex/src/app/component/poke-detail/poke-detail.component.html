@@ -1,1 +1,79 @@
-<p>poke-detail works!</p>
+<div class="back-button">
+  <a [routerLink]="['/']" class="back-link" aria-label="Back to home page">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+    </svg>
+  </a>
+</div>
+
+
+@if (poke$ | async; as poke) {
+  <div class="pokemon-detail-container">
+    <div class="pokemon-header">
+      <h1>{{ poke.name | titlecase }}</h1>
+      <p class="pokemon-id">#{{ poke.id }}</p>
+    </div>
+
+    <div class="pokemon-image-container">
+      <img
+        [src]="poke.sprites.other['official-artwork'].front_default || poke.sprites.front_default"
+        [alt]="poke.name"
+        class="pokemon-image">
+    </div>
+
+    <div class="pokemon-info-card">
+      <div class="pokemon-types">
+        <h2>Types</h2>
+        <div class="type-badges">
+          @for (typeInfo of poke.types; track typeInfo.slot) {
+            <span class="type-badge" [attr.data-type]="typeInfo.type.name">
+              {{ typeInfo.type.name | titlecase }}
+            </span>
+          }
+        </div>
+      </div>
+
+      <div class="pokemon-details">
+        <div class="detail-item">
+          <h3>Height</h3>
+          <p>{{ poke.height / 10 }} m</p>
+        </div>
+        <div class="detail-item">
+          <h3>Weight</h3>
+          <p>{{ poke.weight / 10 }} kg</p>
+        </div>
+      </div>
+
+      <div class="pokemon-abilities">
+        <h2>Abilities</h2>
+        <ul class="abilities-list">
+          @for (abilityInfo of poke.abilities; track abilityInfo.slot) {
+            <li>
+              {{ abilityInfo.ability.name | titlecase }}
+              @if (abilityInfo.is_hidden) {
+                <span>(Hidden)</span>
+              }
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="pokemon-stats">
+        <h2>Stats</h2>
+        @for (statInfo of poke.stats; track statInfo.stat.name) {
+          <div class="stat-container">
+            <div class="stat-name">{{ statInfo.stat.name | titlecase }}</div>
+            <div class="stat-value">{{ statInfo.base_stat }}</div>
+            <div class="stat-bar">
+              <div class="stat-fill" [style.width.%]="statInfo.base_stat / 2.55"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="loading">
+    <p>Loading Pokémon details...</p>
+  </div>
+}

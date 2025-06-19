@@ -47,7 +47,8 @@ export class ApiFetchService {
     return this.http.get<Poke>(`${this.url}pokemon/${id}`);
   }
 
-  getTypes(): Observable<String[]> {
+  // Get all types as an array of strings
+  getTypes(): Observable<string[]> {
     return this.http.get<PokeApiResponse>(`${this.url}type`).pipe(
       map(response => response.results.map(type => type.name))
     );

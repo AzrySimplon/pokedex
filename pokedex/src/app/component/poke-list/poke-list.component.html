@@ -1,22 +1,74 @@
-<div class="filter-section">
-  <label for="type-select">Filter by Type:</label>
-  <select id="type-select" [(ngModel)]="selectedType" (change)="onTypeChange()">
-    <option value="">All Types</option>
-    @for (type of types$ | async; track $index) {
-      <option [value]="type">{{type}}</option>
-    }
-  </select>
-</div>
+<div class="pokedex-container">
+  <header class="pokedex-header">
+    <h1>Pokédex</h1>
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search Pokémon..."
+        [(ngModel)]="searchTerm"
+        (input)="onSearchChange()"
+        class="search-input">
+    </div>
 
-<!-- Using Angular's @for directive to iterate over the pokes$ Observable -->
-@for (poke of displayedPokes$ | async; track $index) {
-  <!-- Display each Pokemon item here -->
-  <a [routerLink]="['/poke', poke.id]">
-    <p>{{poke.name}}</p>
-  </a>
-} @empty {
-  <!-- This block will be displayed when the list is empty or while loading -->
-  <div class="empty-state">
-    <p>No Pokemon found. The list is empty or still loading...</p>
+    <div class="filter-options">
+      <div class="filter-group">
+        <label for="type-filter">Filter by type:</label>
+        <select
+          id="type-filter"
+          [(ngModel)]="selectedType"
+          (change)="onSearchChange()"
+          class="filter-select">
+          <option value="">All Types</option>
+          @if (types$ | async; as types) {
+            @for (type of types; track type) {
+              <option [value]="type">{{ type | titlecase }}</option>
+            }
+          }
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="sort-order">Sort by:</label>
+        <select
+          id="sort-order"
+          [(ngModel)]="alphabeticalOrder"
+          (change)="onSearchChange()"
+          class="filter-select">
+          <option value="">Default</option>
+          <option value="1">A-Z</option>
+          <option value="2">Z-A</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="pokemon-grid">
+    @if (displayedPokes$ | async; as pokeList) {
+      @for (poke of pokeList; track poke.id) {
+        <a [routerLink]="['/poke', poke.id]" class="pokemon-card">
+          <div class="pokemon-image-container">
+            <img
+              [src]="poke.sprites.other['official-artwork'].front_default || poke.sprites.front_default"
+              [alt]="poke.name"
+              class="pokemon-image">
+          </div>
+          <div class="pokemon-info">
+            <span class="pokemon-id">#{{ poke.id }}</span>
+            <h2 class="pokemon-name">{{ poke.name | titlecase }}</h2>
+            <div class="pokemon-types">
+              @for (typeInfo of poke.types; track typeInfo.slot) {
+                <span class="type-badge" [attr.data-type]="typeInfo.type.name">
+                  {{ typeInfo.type.name | titlecase }}
+                </span>
+              }
+            </div>
+          </div>
+        </a>
+      }
+    } @else {
+      <div class="loading">
+        <p>Loading Pokémon data...</p>
+      </div>
+    }
   </div>
-}
+</div>
