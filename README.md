@@ -10,7 +10,6 @@
 
 **Pokedex-Angular** est une application web réactive développée en Angular 19 et TypeScript, conçue en **Pair Programming** pour garantir une qualité de code optimale et un apprentissage mutuel.
 
-![Aperçu de l'application](docs/screenshots/overview.png)
 
 ---
 
@@ -117,10 +116,10 @@ Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour le guide de contribution et les tem
 
 Voir [ROADMAP.md](ROADMAP.md) pour les prochaines évolutions :
 
-- Pagination infinie
-- Thèmes (clair/sombre)
-- Historique de recherche
-- Authentification utilisateur
+- [x] Organisation du Pair Programming  
+- [x] Conception de l’architecture Angular  
+- [x] Implémentation de la recherche, pagination et filtrage  
+- [x] Développement et intégration du thème sombre/clair 
 
 ---
 
@@ -170,3 +169,18 @@ Toutes les 30 minutes (à adapter selon l’équipe).
 MIT – voir [LICENSE](LICENSE)
 
 ---
+
+## 📸 Captures d'écran
+
+Voici quelques aperçus de l’application en fonctionnement :
+
+![Aperçu de l'application](screenshots/Overview.png)
+*Vue générale de la page d'acceuil*
+
+![Aperçu de l'application](screenshots/PokeView.png)
+*Vue générale de la page d'un pokemon*
+
+![Aperçu de l'application](screenshots/PokeDetails.png)
+*Vue générale des details d'un pokemon*
+
+
