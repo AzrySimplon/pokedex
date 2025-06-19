@@ -63,32 +63,6 @@ git clone https://github.com/AzrySimplon/pokedex.git
 cd pokedex
 npm install  # ou yarn install
 ```
-
----
-
-## ⚙️ Configuration
-
-```ts
-// src/environments/environment.ts
-export const environment = {
-  production: false,
-  pokeApiBaseUrl: 'https://pokeapi.co/api/v2',
-  pageLimit: 50
-};
-```
-
----
-
-## 🧪 Utilisation & Tests
-
-```bash
-ng serve    # développement
-ng test     # tests unitaires
-ng e2e      # tests end-to-end
-```
-
-Accéder à http://localhost:4200
-
 ---
 
 ## ✅ Bonnes pratiques
