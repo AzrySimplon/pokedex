@@ -28,24 +28,6 @@ sequenceDiagram
   Note right of List: Tri alphabétique
 ```
 
-### Recherche dynamique
-
-```mermaid
-sequenceDiagram
-  participant Search as SearchComponent
-  Search->>Search: valueChanges
-  Search->>Search: debounceTime(300ms)
-  Search->>Search: distinctUntilChanged
-  Search->>Service: getPokemonList(0, limit)
-  Service->>API: GET /pokemon?offset=0&limit=
-  API-->>Service: { results: [...] }
-  Service-->>Search: [Pokemon[]]
-  Note right of Search: Filtrage local
-```
-
-- Utilisation de `FormControl.valueChanges` + `debounceTime` + `distinctUntilChanged` + `switchMap`.
-- Filtrage local : `.filter(p => p.name.includes(term))`.
-
 ### Détail d’un Pokémon
 
 ```mermaid
