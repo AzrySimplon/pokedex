@@ -42,14 +42,14 @@ export class PokeListComponent {
         // First apply type filter if there's a selected type
         let filteredPokes = pokes;
         if (this.selectedType) {
-          filteredPokes = pokes.filter(poke =>
+          filteredPokes = filteredPokes.filter(poke =>
             poke.types.some(typeInfo => typeInfo.type.name.toLowerCase() === this.selectedType.toLowerCase())
           );
         }
 
         // Then apply search term filter
         if (this.searchTerm) {
-          filteredPokes = pokes.filter(poke =>
+          filteredPokes = filteredPokes.filter(poke =>
             poke.name.toLowerCase().includes(this.searchTerm.toLowerCase())
           );
         }
